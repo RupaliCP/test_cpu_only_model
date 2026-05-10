@@ -1,0 +1,345 @@
+2026-05-11 02:26:53,442 - INFO - ============================================================
+2026-05-11 02:26:53,444 - INFO - HINGLISH SENTIMENT ANALYSIS - BERT MODELS EVALUATION
+2026-05-11 02:26:53,447 - INFO - ============================================================
+2026-05-11 02:26:53,448 - INFO - Log file: sentiment_analysis_20260511_022653.log
+2026-05-11 02:26:53,449 - INFO - 
+2026-05-11 02:26:53,449 - INFO - Downloading Hinglish sentiment analysis dataset from Kaggle...
+2026-05-11 02:26:54,612 - INFO - Path to dataset files: C:\Users\004WR1744\.cache\kagglehub\datasets\shivajeetrai\hinglish-data-for-sentiment-analysis\versions\1
+2026-05-11 02:26:54,613 - INFO - Loading dataset from: C:\Users\004WR1744\.cache\kagglehub\datasets\shivajeetrai\hinglish-data-for-sentiment-analysis\versions\1\output.csv
+2026-05-11 02:26:54,644 - INFO - 
+2026-05-11 02:26:54,645 - INFO - Dataset loaded successfully!
+2026-05-11 02:26:54,645 - INFO - Dataset: Hinglish Sentiment Analysis
+2026-05-11 02:26:54,646 - INFO - Number of samples: 2766
+2026-05-11 02:26:54,649 - INFO - Dataset columns: ['Unnamed: 0', 'text', 'sentiment', 'label']
+2026-05-11 02:26:54,650 - INFO - 
+2026-05-11 02:26:54,650 - INFO - First few rows:
+2026-05-11 02:26:54,659 - INFO - 
+   Unnamed: 0                                                                                                                                                                                                                                                                                                                                                                                             text sentiment  label
+0           0                                                                                                                                                                                                                                                                          module , ek program hoti hai , jismen ya to source code ya machine language ke form men instructions nihit hote hain.\n   neutral      1
+1           1  aur hamne aume samood ke pas unke bhaee saleh ko paimbar banakar bheja to unhonne apni aum se kaha ae meri aum uda hi ki parastish karo uske siva koee tumhara mabood nahin usi ne tumko zamin ki mitti se paida kiya aur tumko usmen basaya to usse maphirat ki duaa mgon phir uski bargah men tauba karo beshak mera paravardigar har shash ke rib aur sabki sunta aur duaa ubool karta hai\n  positive      2
+2           2                                                                                                                                                                                                                                                                                                                                    aur jab unhen yad dilaya jata hai , to ve yad nahin karte ,\n   neutral      1
+3           3                                                                                                                                                                                                                                                                                                                                                          tumhen २०११ ka ted prize mil gaya hai\n  positive      2
+4           4                                                                                                                                                                                                                                                          unhonne bad science karne ke lie ye delhi university ke kirorimal college chale ge jahan inhonne vijnjan graduate ki degree prapt ki.\n   neutral      1
+2026-05-11 02:26:54,660 - INFO - 
+2026-05-11 02:26:54,661 - INFO - Using columns:
+2026-05-11 02:26:54,661 - INFO -   Text column: text
+2026-05-11 02:26:54,662 - INFO -   Label column: label
+2026-05-11 02:26:54,702 - INFO - 
+2026-05-11 02:26:54,704 - INFO - Label distribution:
+2026-05-11 02:26:54,709 - INFO - 
+label
+1    1234
+2     987
+0     545
+2026-05-11 02:26:54,711 - INFO - 
+2026-05-11 02:26:54,714 - INFO - ============================================================
+2026-05-11 02:26:54,714 - INFO - RUNNING MODEL: BERT_Multilingual_Sentiment
+2026-05-11 02:26:54,715 - INFO - ============================================================
+2026-05-11 02:26:55,787 - INFO - HTTP Request: HEAD https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:26:55,800 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlptown/bert-base-multilingual-uncased-sentiment/8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:26:56,059 - INFO - HTTP Request: HEAD https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:26:56,082 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-11 02:26:56,102 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlptown/bert-base-multilingual-uncased-sentiment/8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:26:56,359 - INFO - HTTP Request: GET https://huggingface.co/api/models/nlptown/bert-base-multilingual-uncased-sentiment/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:26:56,609 - INFO - HTTP Request: GET https://huggingface.co/api/models/nlptown/bert-base-multilingual-uncased-sentiment/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:26:57,024 - INFO - HTTP Request: GET https://huggingface.co/api/models/nlptown/bert-base-multilingual-uncased-sentiment "HTTP/1.1 200 OK"
+2026-05-11 02:26:57,264 - INFO - HTTP Request: HEAD https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:26:57,275 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlptown/bert-base-multilingual-uncased-sentiment/8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:07,327 - INFO - Accuracy : 0.4512
+2026-05-11 02:32:07,327 - INFO - Precision: 0.7516
+2026-05-11 02:32:07,328 - INFO - Recall   : 0.4512
+2026-05-11 02:32:07,328 - INFO - F1 Score : 0.4875
+2026-05-11 02:32:07,328 - INFO - 
+2026-05-11 02:32:07,328 - INFO - ============================================================
+2026-05-11 02:32:07,328 - INFO - RUNNING MODEL: DistilBERT_Multilingual
+2026-05-11 02:32:07,328 - INFO - ============================================================
+2026-05-11 02:32:07,593 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:07,601 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:07,617 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:07,897 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:07,910 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:07,924 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:08,625 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:08,635 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:08,880 - INFO - HTTP Request: GET https://huggingface.co/api/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:32:09,116 - INFO - HTTP Request: GET https://huggingface.co/api/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:32:09,353 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:09,367 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/vocab.txt "HTTP/1.1 200 OK"
+2026-05-11 02:32:09,382 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/vocab.txt "HTTP/1.1 200 OK"
+2026-05-11 02:32:09,714 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:09,726 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:09,747 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:10,101 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:32:10,342 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:10,360 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:10,371 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:10,612 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-11 02:32:11,127 - INFO - HTTP Request: GET https://huggingface.co/api/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student "HTTP/1.1 200 OK"
+2026-05-11 02:32:11,429 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:32:11,441 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/cf991100d706c13c0a080c097134c05b7f436c45/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:32:11,718 - INFO - HTTP Request: HEAD https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-05-11 02:32:12,013 - INFO - HTTP Request: GET https://huggingface.co/api/models/lxyuan/distilbert-base-multilingual-cased-sentiments-student/xet-read-token/cf991100d706c13c0a080c097134c05b7f436c45 "HTTP/1.1 200 OK"
+2026-05-11 02:35:39,442 - INFO - Accuracy : 0.3876
+2026-05-11 02:35:39,454 - INFO - Precision: 0.5879
+2026-05-11 02:35:39,454 - INFO - Recall   : 0.3876
+2026-05-11 02:35:39,454 - INFO - F1 Score : 0.4473
+2026-05-11 02:35:39,454 - INFO - 
+2026-05-11 02:35:39,455 - INFO - ============================================================
+2026-05-11 02:35:39,455 - INFO - RUNNING MODEL: MuRIL_Base
+2026-05-11 02:35:39,455 - INFO - ============================================================
+2026-05-11 02:35:39,748 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:35:39,757 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:39,778 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:40,075 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:35:40,086 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:40,104 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:40,371 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:35:40,672 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:35:40,915 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:35:40,925 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/vocab.txt "HTTP/1.1 200 OK"
+2026-05-11 02:35:40,946 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/vocab.txt "HTTP/1.1 200 OK"
+2026-05-11 02:35:41,358 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/tokenizer.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:35:41,612 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:35:41,857 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:35:41,871 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:41,899 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:42,146 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-11 02:35:42,639 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased "HTTP/1.1 200 OK"
+2026-05-11 02:35:42,913 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:35:42,923 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/muril-base-cased/afd9f36c7923d54e97903922ff1b260d091d202f/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:35:43,165 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-05-11 02:35:43,405 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:35:43,676 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-05-11 02:35:43,923 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/xet-read-token/afd9f36c7923d54e97903922ff1b260d091d202f "HTTP/1.1 200 OK"
+2026-05-11 02:38:03,977 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-05-11 02:38:04,231 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased "HTTP/1.1 200 OK"
+2026-05-11 02:38:04,487 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/commits/main "HTTP/1.1 200 OK"
+2026-05-11 02:38:04,744 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/discussions?p=0 "HTTP/1.1 200 OK"
+2026-05-11 02:38:05,200 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/commits/refs%2Fpr%2F3 "HTTP/1.1 200 OK"
+2026-05-11 02:38:05,442 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/refs%2Fpr%2F3/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:38:05,685 - INFO - HTTP Request: HEAD https://huggingface.co/google/muril-base-cased/resolve/refs%2Fpr%2F3/model.safetensors "HTTP/1.1 302 Found"
+2026-05-11 02:38:05,926 - INFO - HTTP Request: GET https://huggingface.co/api/models/google/muril-base-cased/xet-read-token/f7203dddc4ea4df9606c03fa6e44c6534689f133 "HTTP/1.1 200 OK"
+2026-05-11 02:41:43,535 - INFO - Accuracy : 0.1970
+2026-05-11 02:41:43,536 - INFO - Precision: 0.0388
+2026-05-11 02:41:43,536 - INFO - Recall   : 0.1970
+2026-05-11 02:41:43,536 - INFO - F1 Score : 0.0649
+2026-05-11 02:41:43,536 - INFO - 
+2026-05-11 02:41:43,536 - INFO - ============================================================
+2026-05-11 02:41:43,536 - INFO - RUNNING MODEL: IndicBERT
+2026-05-11 02:41:43,537 - INFO - ============================================================
+2026-05-11 02:41:43,834 - INFO - HTTP Request: HEAD https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:41:44,078 - INFO - HTTP Request: HEAD https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:41:44,079 - ERROR - 
+2026-05-11 02:41:44,079 - ERROR - ERROR OCCURRED
+2026-05-11 02:41:44,079 - ERROR - You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/ai4bharat/indic-bert.
+401 Client Error. (Request ID: Root=1-6a00f496-066c5e90743ed42452e0adda;2c520995-b932-4050-8a33-32a340043590)
+
+Cannot access gated repo for url https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json.
+Access to model ai4bharat/indic-bert is restricted. You must have access to it and be authenticated to access it. Please log in.
+2026-05-11 02:41:44,080 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 787, in hf_raise_for_status
+    raise _format(GatedRepoError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6a00f496-1ce2039d3888fd4e04b49410;bc77ee5c-c947-4d52-bc79-8b1c61ec17ef)
+
+Cannot access gated repo for url https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json.
+Access to model ai4bharat/indic-bert is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 692, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 488, in cached_files
+    raise OSError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/ai4bharat/indic-bert.
+401 Client Error. (Request ID: Root=1-6a00f496-1ce2039d3888fd4e04b49410;bc77ee5c-c947-4d52-bc79-8b1c61ec17ef)
+
+Cannot access gated repo for url https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json.
+Access to model ai4bharat/indic-bert is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 787, in hf_raise_for_status
+    raise _format(GatedRepoError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6a00f496-066c5e90743ed42452e0adda;2c520995-b932-4050-8a33-32a340043590)
+
+Cannot access gated repo for url https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json.
+Access to model ai4bharat/indic-bert is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 696, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 641, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 488, in cached_files
+    raise OSError(
+OSError: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/ai4bharat/indic-bert.
+401 Client Error. (Request ID: Root=1-6a00f496-066c5e90743ed42452e0adda;2c520995-b932-4050-8a33-32a340043590)
+
+Cannot access gated repo for url https://huggingface.co/ai4bharat/indic-bert/resolve/main/config.json.
+Access to model ai4bharat/indic-bert is restricted. You must have access to it and be authenticated to access it. Please log in.
+2026-05-11 02:41:44,126 - INFO - 
+2026-05-11 02:41:44,126 - INFO - ============================================================
+2026-05-11 02:41:44,126 - INFO - RUNNING MODEL: HingBERT
+2026-05-11 02:41:44,126 - INFO - ============================================================
+2026-05-11 02:41:44,413 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:41:44,424 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:44,453 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:44,730 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:41:44,745 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:44,761 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:45,041 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-bert/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:41:45,379 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-bert/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:41:45,628 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:41:45,637 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/vocab.txt "HTTP/1.1 200 OK"
+2026-05-11 02:41:45,656 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/vocab.txt "HTTP/1.1 200 OK"
+2026-05-11 02:41:45,928 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:41:45,940 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:45,957 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/tokenizer.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:46,228 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:41:46,474 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:41:46,485 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:46,511 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:46,763 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-11 02:41:47,168 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:41:47,179 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-bert/62cf31a13d65ae3b846456cede60c7d965e5fdd4/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:41:47,503 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-05-11 02:41:47,743 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-bert/xet-read-token/62cf31a13d65ae3b846456cede60c7d965e5fdd4 "HTTP/1.1 200 OK"
+2026-05-11 02:48:33,963 - INFO - Accuracy : 0.3445
+2026-05-11 02:48:33,964 - INFO - Precision: 0.7024
+2026-05-11 02:48:33,964 - INFO - Recall   : 0.3445
+2026-05-11 02:48:33,964 - INFO - F1 Score : 0.3559
+2026-05-11 02:48:33,964 - INFO - 
+2026-05-11 02:48:33,965 - INFO - ============================================================
+2026-05-11 02:48:33,965 - INFO - RUNNING MODEL: HingRoBERTa
+2026-05-11 02:48:33,965 - INFO - ============================================================
+2026-05-11 02:48:34,233 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:48:34,255 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:34,514 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:34,867 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:48:34,878 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:35,128 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:35,437 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:48:35,700 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:48:35,950 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/sentencepiece.bpe.model "HTTP/1.1 404 Not Found"
+2026-05-11 02:48:36,214 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+2026-05-11 02:48:36,455 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/xet-read-token/f714c4bdce6b008a2fbb84193eee99e651c59e15 "HTTP/1.1 200 OK"
+2026-05-11 02:48:40,526 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:48:40,767 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:48:40,778 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:41,033 - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:41,281 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-05-11 02:48:46,900 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta "HTTP/1.1 200 OK"
+2026-05-11 02:48:47,160 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:48:47,170 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/l3cube-pune/hing-roberta/f714c4bdce6b008a2fbb84193eee99e651c59e15/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:48:47,449 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-05-11 02:48:47,691 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:48:47,960 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-05-11 02:51:32,304 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-05-11 02:51:32,644 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta "HTTP/1.1 200 OK"
+2026-05-11 02:51:32,961 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/commits/main "HTTP/1.1 200 OK"
+2026-05-11 02:51:33,217 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/discussions?p=0 "HTTP/1.1 200 OK"
+2026-05-11 02:51:33,463 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/commits/refs%2Fpr%2F2 "HTTP/1.1 200 OK"
+2026-05-11 02:51:33,724 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/refs%2Fpr%2F2/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:51:33,978 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta/resolve/refs%2Fpr%2F2/model.safetensors "HTTP/1.1 302 Found"
+2026-05-11 02:51:34,248 - INFO - HTTP Request: GET https://huggingface.co/api/models/l3cube-pune/hing-roberta/xet-read-token/cb17591d992503f44c432ca6e18fe58aa58458b4 "HTTP/1.1 200 OK"

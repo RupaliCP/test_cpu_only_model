@@ -1,0 +1,879 @@
+2026-05-11 02:24:01,555 - INFO - ============================================================
+2026-05-11 02:24:01,555 - INFO - HINGLISH SENTIMENT ANALYSIS - BERT MODELS EVALUATION
+2026-05-11 02:24:01,556 - INFO - ============================================================
+2026-05-11 02:24:01,556 - INFO - Log file: sentiment_analysis_20260511_022401.log
+2026-05-11 02:24:01,556 - INFO - 
+2026-05-11 02:24:01,556 - INFO - Downloading Hinglish sentiment analysis dataset from Kaggle...
+2026-05-11 02:24:02,591 - INFO - Path to dataset files: C:\Users\004WR1744\.cache\kagglehub\datasets\shivajeetrai\hinglish-data-for-sentiment-analysis\versions\1
+2026-05-11 02:24:02,591 - INFO - Loading dataset from: C:\Users\004WR1744\.cache\kagglehub\datasets\shivajeetrai\hinglish-data-for-sentiment-analysis\versions\1\output.csv
+2026-05-11 02:24:02,639 - INFO - 
+2026-05-11 02:24:02,639 - INFO - Dataset loaded successfully!
+2026-05-11 02:24:02,639 - INFO - Dataset: Hinglish Sentiment Analysis
+2026-05-11 02:24:02,639 - INFO - Number of samples: 2766
+2026-05-11 02:24:02,640 - INFO - Dataset columns: ['Unnamed: 0', 'text', 'sentiment', 'label']
+2026-05-11 02:24:02,640 - INFO - 
+2026-05-11 02:24:02,640 - INFO - First few rows:
+2026-05-11 02:24:02,645 - INFO - 
+   Unnamed: 0                                                                                                                                                                                                                                                                                                                                                                                             text sentiment  label
+0           0                                                                                                                                                                                                                                                                          module , ek program hoti hai , jismen ya to source code ya machine language ke form men instructions nihit hote hain.\n   neutral      1
+1           1  aur hamne aume samood ke pas unke bhaee saleh ko paimbar banakar bheja to unhonne apni aum se kaha ae meri aum uda hi ki parastish karo uske siva koee tumhara mabood nahin usi ne tumko zamin ki mitti se paida kiya aur tumko usmen basaya to usse maphirat ki duaa mgon phir uski bargah men tauba karo beshak mera paravardigar har shash ke rib aur sabki sunta aur duaa ubool karta hai\n  positive      2
+2           2                                                                                                                                                                                                                                                                                                                                    aur jab unhen yad dilaya jata hai , to ve yad nahin karte ,\n   neutral      1
+3           3                                                                                                                                                                                                                                                                                                                                                          tumhen २०११ ka ted prize mil gaya hai\n  positive      2
+4           4                                                                                                                                                                                                                                                          unhonne bad science karne ke lie ye delhi university ke kirorimal college chale ge jahan inhonne vijnjan graduate ki degree prapt ki.\n   neutral      1
+2026-05-11 02:24:02,646 - INFO - 
+2026-05-11 02:24:02,646 - INFO - Using columns:
+2026-05-11 02:24:02,646 - INFO -   Text column: text
+2026-05-11 02:24:02,646 - INFO -   Label column: label
+2026-05-11 02:24:02,663 - INFO - 
+2026-05-11 02:24:02,663 - INFO - Label distribution:
+2026-05-11 02:24:02,669 - INFO - 
+label
+1    1234
+2     987
+0     545
+2026-05-11 02:24:02,669 - INFO - 
+2026-05-11 02:24:02,669 - INFO - ============================================================
+2026-05-11 02:24:02,669 - INFO - RUNNING MODEL: BERT_Base_Multilingual
+2026-05-11 02:24:02,670 - INFO - ============================================================
+2026-05-11 02:24:03,211 - INFO - HTTP Request: HEAD https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:24:03,212 - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-11 02:24:03,221 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlptown/bert-base-multilingual-uncased-sentiment/8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:24:03,472 - INFO - HTTP Request: HEAD https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:24:03,481 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlptown/bert-base-multilingual-uncased-sentiment/8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:24:03,720 - INFO - HTTP Request: GET https://huggingface.co/api/models/nlptown/bert-base-multilingual-uncased-sentiment/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:24:03,959 - INFO - HTTP Request: GET https://huggingface.co/api/models/nlptown/bert-base-multilingual-uncased-sentiment/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:24:04,283 - INFO - HTTP Request: GET https://huggingface.co/api/models/nlptown/bert-base-multilingual-uncased-sentiment "HTTP/1.1 200 OK"
+2026-05-11 02:24:04,529 - INFO - HTTP Request: HEAD https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:24:04,537 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlptown/bert-base-multilingual-uncased-sentiment/8f6f4e3a8f70be4b65d3a4a8762b6d781cda240d/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:29:05,994 - INFO - Accuracy : 0.4512
+2026-05-11 02:29:05,994 - INFO - Precision: 0.7516
+2026-05-11 02:29:05,994 - INFO - Recall   : 0.4512
+2026-05-11 02:29:05,994 - INFO - F1 Score : 0.4875
+2026-05-11 02:29:05,996 - INFO - 
+2026-05-11 02:29:05,996 - INFO - ============================================================
+2026-05-11 02:29:05,996 - INFO - RUNNING MODEL: IndicBERT_Sentiment
+2026-05-11 02:29:05,996 - INFO - ============================================================
+2026-05-11 02:29:06,281 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/indic-bert-v1-hi-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:06,523 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/indic-bert-v1-hi-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:06,524 - ERROR - 
+2026-05-11 02:29:06,524 - ERROR - ERROR OCCURRED
+2026-05-11 02:29:06,524 - ERROR - l3cube-pune/indic-bert-v1-hi-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:06,524 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/indic-bert-v1-hi-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a0-66a7fdc3055184f923d92800;5623712e-3b05-4b1b-bc22-1ab12bd30474)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/indic-bert-v1-hi-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 692, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/indic-bert-v1-hi-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/indic-bert-v1-hi-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a0-46a1e4c024114ae779558642;7cf25bb4-7173-42d1-b8a3-06c2838bad73)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/indic-bert-v1-hi-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 696, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 641, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/indic-bert-v1-hi-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:06,550 - INFO - 
+2026-05-11 02:29:06,550 - INFO - ============================================================
+2026-05-11 02:29:06,550 - INFO - RUNNING MODEL: XLM_RoBERTa_Sentiment
+2026-05-11 02:29:06,550 - INFO - ============================================================
+2026-05-11 02:29:06,790 - INFO - HTTP Request: HEAD https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:29:06,801 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/cardiffnlp/twitter-xlm-roberta-base-sentiment/f2f1202b1bdeb07342385c3f807f9c07cd8f5cf8/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:29:07,065 - INFO - HTTP Request: HEAD https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:29:07,321 - INFO - HTTP Request: HEAD https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+2026-05-11 02:29:07,578 - INFO - HTTP Request: GET https://huggingface.co/api/models/cardiffnlp/twitter-xlm-roberta-base-sentiment/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:29:07,810 - INFO - HTTP Request: GET https://huggingface.co/api/models/cardiffnlp/twitter-xlm-roberta-base-sentiment/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:29:08,062 - INFO - HTTP Request: HEAD https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+2026-05-11 02:29:08,194 - ERROR - 
+2026-05-11 02:29:08,195 - ERROR - ERROR OCCURRED
+2026-05-11 02:29:08,195 - ERROR - Error parsing line b'\x0e' in C:\Users\004WR1744\.cache\huggingface\hub\models--cardiffnlp--twitter-xlm-roberta-base-sentiment\snapshots\f2f1202b1bdeb07342385c3f807f9c07cd8f5cf8\sentencepiece.bpe.model
+2026-05-11 02:29:08,195 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\tokenization_utils_tokenizers.py", line 217, in convert_to_native_format
+    extractor = SentencePieceExtractor(vocab_file)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\convert_slow_tokenizer.py", line 152, in __init__
+    requires_backends(self, "sentencepiece")
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\import_utils.py", line 2040, in requires_backends
+    raise ImportError("".join(failed))
+ImportError: 
+SentencePieceExtractor requires the SentencePiece library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/google/sentencepiece#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\tiktoken\load.py", line 168, in load_tiktoken_bpe
+    token, rank = line.split()
+    ^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 837, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\tokenization_utils_base.py", line 1743, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\tokenization_utils_base.py", line 1930, in _from_pretrained
+    init_kwargs = cls.convert_to_native_format(**init_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\tokenization_utils_tokenizers.py", line 283, in convert_to_native_format
+    local_kwargs["tokenizer_object"] = converter.converted()
+                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\convert_slow_tokenizer.py", line 1957, in converted
+    tokenizer = self.tokenizer()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\convert_slow_tokenizer.py", line 1950, in tokenizer
+    vocab_scores, merges = self.extract_vocab_merges_from_model(self.vocab_file)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\convert_slow_tokenizer.py", line 1926, in extract_vocab_merges_from_model
+    bpe_ranks = load_tiktoken_bpe(tiktoken_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\tiktoken\load.py", line 171, in load_tiktoken_bpe
+    raise ValueError(f"Error parsing line {line!r} in {tiktoken_bpe_file}") from e
+ValueError: Error parsing line b'\x0e' in C:\Users\004WR1744\.cache\huggingface\hub\models--cardiffnlp--twitter-xlm-roberta-base-sentiment\snapshots\f2f1202b1bdeb07342385c3f807f9c07cd8f5cf8\sentencepiece.bpe.model
+2026-05-11 02:29:08,206 - INFO - 
+2026-05-11 02:29:08,207 - INFO - ============================================================
+2026-05-11 02:29:08,207 - INFO - RUNNING MODEL: MuRIL_Sentiment
+2026-05-11 02:29:08,207 - INFO - ============================================================
+2026-05-11 02:29:08,439 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/muril-sentiment-latest/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:08,674 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/muril-sentiment-latest/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:08,676 - ERROR - 
+2026-05-11 02:29:08,676 - ERROR - ERROR OCCURRED
+2026-05-11 02:29:08,676 - ERROR - l3cube-pune/muril-sentiment-latest is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:08,676 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/muril-sentiment-latest/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a2-6b1c8a164c204cc32cf8b46f;b829b902-dc47-452e-bc9f-c84f2a923468)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/muril-sentiment-latest/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 692, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/muril-sentiment-latest is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/muril-sentiment-latest/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a3-7301e5ca51d417b0575e14b7;4fa83a0d-2a5c-45fc-84f1-f1b87e04b69f)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/muril-sentiment-latest/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 696, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 641, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/muril-sentiment-latest is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:08,682 - INFO - 
+2026-05-11 02:29:08,682 - INFO - ============================================================
+2026-05-11 02:29:08,682 - INFO - RUNNING MODEL: HingBERT_Sentiment
+2026-05-11 02:29:08,682 - INFO - ============================================================
+2026-05-11 02:29:08,916 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:09,151 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-bert-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:09,151 - ERROR - 
+2026-05-11 02:29:09,151 - ERROR - ERROR OCCURRED
+2026-05-11 02:29:09,151 - ERROR - l3cube-pune/hing-bert-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:09,151 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/hing-bert-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a3-5c2ef55f467caa3962b96cf5;bd8df0c0-7682-4e48-91ba-35cf301b4eb7)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/hing-bert-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 692, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/hing-bert-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/hing-bert-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a3-48023c853f543f732a57c6aa;9d4c8c32-49be-4bc2-ab77-c73dcaacd47e)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/hing-bert-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 696, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 641, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/hing-bert-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:09,156 - INFO - 
+2026-05-11 02:29:09,156 - INFO - ============================================================
+2026-05-11 02:29:09,158 - INFO - RUNNING MODEL: HingRoBERTa_Sentiment
+2026-05-11 02:29:09,158 - INFO - ============================================================
+2026-05-11 02:29:09,394 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:09,629 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hing-roberta-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:09,631 - ERROR - 
+2026-05-11 02:29:09,631 - ERROR - ERROR OCCURRED
+2026-05-11 02:29:09,631 - ERROR - l3cube-pune/hing-roberta-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:09,631 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/hing-roberta-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a3-0578eadf2b21ebcb6f511841;e78191d4-bdf1-4206-9218-890d30d9d025)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/hing-roberta-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 692, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/hing-roberta-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/hing-roberta-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a4-65f98c3e3cf25fa8228b7245;9cfe3869-c3ac-44be-984d-397ff56bf21b)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/hing-roberta-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 696, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 641, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/hing-roberta-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:09,637 - INFO - 
+2026-05-11 02:29:09,637 - INFO - ============================================================
+2026-05-11 02:29:09,637 - INFO - RUNNING MODEL: HingMBERT_Sentiment
+2026-05-11 02:29:09,637 - INFO - ============================================================
+2026-05-11 02:29:09,895 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hindi-bert-v2-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:10,134 - INFO - HTTP Request: HEAD https://huggingface.co/l3cube-pune/hindi-bert-v2-sentiment/resolve/main/config.json "HTTP/1.1 401 Unauthorized"
+2026-05-11 02:29:10,136 - ERROR - 
+2026-05-11 02:29:10,136 - ERROR - ERROR OCCURRED
+2026-05-11 02:29:10,136 - ERROR - l3cube-pune/hindi-bert-v2-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:10,136 - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/hindi-bert-v2-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a4-04f8ec0d2e8216b85c4a5725;e611102f-0238-4e3c-b069-d497636156a9)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/hindi-bert-v2-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 692, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/hindi-bert-v2-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/l3cube-pune/hindi-bert-v2-sentiment/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1148, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1782, in _raise_on_head_call_error
+    raise head_call_error
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\huggingface_hub\utils\_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a00f1a4-4fcdd6f32b157c7e0e85a704;ed20feac-af3b-473a-9e3b-b3293b132d6b)
+
+Repository Not Found for url: https://huggingface.co/l3cube-pune/hindi-bert-v2-sentiment/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\004WR1744\OneDrive - IBM\Documents\research git\rtest\gluecos_sa.py", line 228, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\models\auto\tokenization_auto.py", line 696, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 641, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 682, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\configuration_utils.py", line 737, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\004WR1744\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\utils\hub.py", line 454, in cached_files
+    raise OSError(
+OSError: l3cube-pune/hindi-bert-v2-sentiment is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+2026-05-11 02:29:10,140 - INFO - 
+2026-05-11 02:29:10,140 - INFO - ============================================================
+2026-05-11 02:29:10,140 - INFO - FINAL RESULTS
+2026-05-11 02:29:10,140 - INFO - ============================================================
+2026-05-11 02:29:10,142 - INFO - 
+2026-05-11 02:29:10,146 - INFO - 
+                    Model  Accuracy  Precision    Recall        F1
+0  BERT_Base_Multilingual  0.451193   0.751631  0.451193  0.487481
+2026-05-11 02:29:10,152 - INFO - 
+2026-05-11 02:29:10,152 - INFO - Results saved to:
+2026-05-11 02:29:10,152 - INFO -   - hinglish_sentiment_results.csv
+2026-05-11 02:29:10,152 - INFO -   - sentiment_analysis_20260511_022401.log
+2026-05-11 02:29:10,152 - INFO - 
+2026-05-11 02:29:10,152 - INFO - ============================================================
+2026-05-11 02:29:10,152 - INFO - EVALUATION COMPLETED SUCCESSFULLY
+2026-05-11 02:29:10,154 - INFO - ============================================================

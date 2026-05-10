@@ -1,0 +1,44 @@
+2026-05-11 02:11:13,783 - INFO - ============================================================
+2026-05-11 02:11:13,783 - INFO - HINGLISH SENTIMENT ANALYSIS - BERT MODELS EVALUATION
+2026-05-11 02:11:13,783 - INFO - ============================================================
+2026-05-11 02:11:13,783 - INFO - Log file: sentiment_analysis_20260511_021113.log
+2026-05-11 02:11:13,783 - INFO - 
+2026-05-11 02:11:13,783 - INFO - Downloading Hinglish sentiment analysis dataset from Kaggle...
+2026-05-11 02:11:16,807 - INFO - Path to dataset files: C:\Users\004WR1744\.cache\kagglehub\datasets\shivajeetrai\hinglish-data-for-sentiment-analysis\versions\1
+2026-05-11 02:11:16,807 - INFO - Loading dataset from: C:\Users\004WR1744\.cache\kagglehub\datasets\shivajeetrai\hinglish-data-for-sentiment-analysis\versions\1\output.csv
+2026-05-11 02:11:16,882 - INFO - 
+2026-05-11 02:11:16,882 - INFO - Dataset loaded successfully!
+2026-05-11 02:11:16,882 - INFO - Dataset: Hinglish Sentiment Analysis
+2026-05-11 02:11:16,882 - INFO - Number of samples: 2766
+2026-05-11 02:11:16,882 - INFO - Dataset columns: ['Unnamed: 0', 'text', 'sentiment', 'label']
+2026-05-11 02:11:16,882 - INFO - 
+2026-05-11 02:11:16,882 - INFO - First few rows:
+2026-05-11 02:11:16,889 - INFO - 
+   Unnamed: 0                                                                                                                                                                                                                                                                                                                                                                                             text sentiment  label
+0           0                                                                                                                                                                                                                                                                          module , ek program hoti hai , jismen ya to source code ya machine language ke form men instructions nihit hote hain.\n   neutral      1
+1           1  aur hamne aume samood ke pas unke bhaee saleh ko paimbar banakar bheja to unhonne apni aum se kaha ae meri aum uda hi ki parastish karo uske siva koee tumhara mabood nahin usi ne tumko zamin ki mitti se paida kiya aur tumko usmen basaya to usse maphirat ki duaa mgon phir uski bargah men tauba karo beshak mera paravardigar har shash ke rib aur sabki sunta aur duaa ubool karta hai\n  positive      2
+2           2                                                                                                                                                                                                                                                                                                                                    aur jab unhen yad dilaya jata hai , to ve yad nahin karte ,\n   neutral      1
+3           3                                                                                                                                                                                                                                                                                                                                                          tumhen २०११ ka ted prize mil gaya hai\n  positive      2
+4           4                                                                                                                                                                                                                                                          unhonne bad science karne ke lie ye delhi university ke kirorimal college chale ge jahan inhonne vijnjan graduate ki degree prapt ki.\n   neutral      1
+2026-05-11 02:11:16,897 - INFO - 
+2026-05-11 02:11:16,897 - INFO - Using columns:
+2026-05-11 02:11:16,897 - INFO -   Text column: text
+2026-05-11 02:11:16,897 - INFO -   Label column: label
+2026-05-11 02:11:16,914 - INFO - 
+2026-05-11 02:11:16,914 - INFO - Label distribution:
+2026-05-11 02:11:16,922 - INFO - 
+label
+1    1234
+2     987
+0     545
+2026-05-11 02:11:16,922 - INFO - 
+2026-05-11 02:11:16,922 - INFO - ============================================================
+2026-05-11 02:11:16,922 - INFO - RUNNING MODEL: BERT_Base_Cased
+2026-05-11 02:11:16,922 - INFO - ============================================================
+2026-05-11 02:11:17,516 - INFO - HTTP Request: HEAD https://huggingface.co/bert-base-cased/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-05-11 02:11:17,825 - INFO - HTTP Request: HEAD https://huggingface.co/bert-base-cased/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-11 02:11:18,135 - INFO - HTTP Request: GET https://huggingface.co/api/models/bert-base-cased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:11:18,439 - INFO - HTTP Request: GET https://huggingface.co/api/models/google-bert/bert-base-cased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-11 02:11:18,750 - INFO - HTTP Request: GET https://huggingface.co/api/models/bert-base-cased/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-05-11 02:11:19,058 - INFO - HTTP Request: GET https://huggingface.co/api/models/google-bert/bert-base-cased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-11 02:11:19,466 - INFO - HTTP Request: HEAD https://huggingface.co/bert-base-cased/resolve/main/config.json "HTTP/1.1 200 OK"
